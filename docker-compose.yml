@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # GitHub Pages / ローカル開発など、必要に応じて増やす
+      - PORT=8080
+      - CORS_ORIGINS=http://localhost:*
+      - LOG_LEVEL=debug
